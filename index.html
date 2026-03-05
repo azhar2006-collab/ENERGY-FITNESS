@@ -355,6 +355,57 @@
             line-height: 1.6;
         }
 
+        /* Contact Info Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item {
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            color: white;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #ffa366;
+            text-decoration: underline;
+        }
+
         /* Lead Capture Section */
         .lead-capture {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -717,6 +768,26 @@
                 font-size: 0.95rem;
             }
 
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem 0;
+            }
+
+            .contact-icon {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .contact-item h3 {
+                font-size: 1rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .contact-item p {
+                font-size: 0.95rem;
+            }
+
             .form-group {
                 margin-bottom: 1rem;
             }
@@ -782,6 +853,26 @@
                 font-size: 0.85rem;
                 margin: 0.3rem 0;
             }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem 0;
+            }
+
+            .contact-icon {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .contact-item h3 {
+                font-size: 1rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .contact-item p {
+                font-size: 0.95rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -835,6 +926,25 @@
 
             .price-period {
                 font-size: 0.8rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+                padding: 1rem 0;
+            }
+
+            .contact-icon {
+                font-size: 1.8rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .contact-item h3 {
+                font-size: 0.95rem;
+            }
+
+            .contact-item p {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -905,8 +1015,36 @@
     <section class="lead-capture" id="contact">
         <div class="capture-container">
             <div class="capture-title">
-                <h2>Ready to Transform?</h2>
-                <p>Get your free trial and personalized fitness plan</p>
+                <h2>Get In Touch</h2>
+                <p>Ready to transform? Contact us today!</p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+919884094496">+91 9884094496</a></p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Address</h3>
+                    <p>New Market Street<br>Choolaimedu<br>Chennai 600094</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <h3>Hours</h3>
+                    <p>Morning: 5:30 AM - 1:30 PM<br>Evening: 4:00 PM - 9:30 PM</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+                OR
+            </div>
+
+            <div class="capture-title">
+                <h2>Join Our Free Trial</h2>
+                <p>Fill the form below to claim your free trial</p>
             </div>
             <div id="successMessage" class="success-message">
                 ✓ Thanks for signing up! We'll contact you soon.
