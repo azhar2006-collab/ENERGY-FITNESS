@@ -632,6 +632,53 @@
             margin: 0.5rem 0;
         }
 
+        /* Social Media Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .social-btn.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-color: #fff;
+        }
+
+        .social-btn.facebook:hover {
+            background: #1877f2;
+            border-color: #fff;
+        }
+
+        .social-btn svg {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover svg {
+            transform: scale(1.1);
+        }
+
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             h1 {
@@ -854,6 +901,22 @@
                 margin: 0.3rem 0;
             }
 
+            .social-links {
+                gap: 1.2rem;
+                margin-top: 1.2rem;
+                padding-top: 1.2rem;
+            }
+
+            .social-btn {
+                width: 40px;
+                height: 40px;
+            }
+
+            .social-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+
             .contact-info {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -946,6 +1009,22 @@
             .contact-item p {
                 font-size: 0.9rem;
             }
+
+            .social-links {
+                gap: 1rem;
+                margin-top: 1rem;
+                padding-top: 1rem;
+            }
+
+            .social-btn {
+                width: 38px;
+                height: 38px;
+            }
+
+            .social-btn svg {
+                width: 18px;
+                height: 18px;
+            }
         }
     </style>
 </head>
@@ -974,7 +1053,7 @@
             <h1>Transform Your Body, Transform Your Life</h1>
             <p>Join thousands of members who have achieved their fitness goals with our state-of-the-art facilities and expert trainers</p>
             <div class="hero-buttons">
-                <button class="btn-primary" onclick="scrollToCapture()">BOOK YOUR SESSION</button>
+                <button class="btn-primary" onclick="scrollToCapture()">Claim Your Free Trial</button>
                 <button class="btn-secondary" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">Learn More</button>
             </div>
         </div>
@@ -1024,7 +1103,7 @@
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
                     <h3>Phone</h3>
-                    <p><a href="tel:+919884094496">+91 9884094496</a><br>Mr . SARAVANAN</p>
+                    <p><a href="tel:+919884094496">+91 9884094496</a></p>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">📍</div>
@@ -1076,7 +1155,7 @@
                         <option value="general">General Fitness</option>
                     </select>
                 </div>
-                <button type="submit" class="submit-btn">BOOK YOUR SESSION</button>
+                <button type="submit" class="submit-btn">Claim Your Free Trial</button>
             </form>
         </div>
     </section>
@@ -1101,7 +1180,7 @@
             </div>
             <div class="pricing-card featured">
                 <h3>QUARTERLY</h3>
-                <div class="price">₹3499<span class="price-period"> / 3-Months</span></div>
+                <div class="price">₹3499<span class="price-period">/(3-Months)</span></div>
                 <ul class="features-list">
                     <li>Personal Training Sessions</li>
                     <li>Nutrition Coaching</li>
@@ -1112,7 +1191,7 @@
             </div>
             <div class="pricing-card">
                 <h3>HALF YEARLY</h3>
-                <div class="price">₹5499<span class="price-period">/ 6-months</span></div>
+                <div class="price">₹5499<span class="price-period">(/6-months)</span></div>
                 <ul class="features-list">
                     <li>Unlimited Personal Training</li>
                     <li>Custom Meal Plans</li>
@@ -1128,6 +1207,20 @@
     <footer>
         <p>&copy; 2026 ENERGY FITNESS. All rights reserved.</p>
         <p>Transform your body, transform your life.</p>
+        
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/efsaravanan?igsh=MWJnYTRuaGExd2dqeA==" target="_blank" rel="noopener noreferrer" class="social-btn instagram" title="Follow us on Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100066761906495" target="_blank" rel="noopener noreferrer" class="social-btn facebook" title="Follow us on Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </a>
+        </div>
     </footer>
 
     <script>
@@ -1237,5 +1330,3 @@
     </script>
 </body>
 </html>
-
-
