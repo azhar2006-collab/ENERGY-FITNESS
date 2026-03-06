@@ -355,6 +355,272 @@
             line-height: 1.6;
         }
 
+        /* ACHIEVEMENTS SECTION */
+        .achievements {
+            padding: 4rem 1.5rem;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievements::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .achievements-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .achievements-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .achievements-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .achievements-title p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .achievements-carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .achievements-carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .achievements-carousel {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            gap: 0;
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            margin: 0 !important;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .carousel-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-height: 44px;
+        }
+
+        .carousel-btn:hover {
+            background: #ff5520;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(255, 107, 53, 0.3);
+        }
+
+        .carousel-counter {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            min-width: 80px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            group: "achievement";
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2), inset 0 0 20px rgba(255, 107, 53, 0.05);
+        }
+
+        .achievement-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        }
+
+        .achievement-image img {
+            width: 100%;
+            height: 160%;
+             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            
+    }
+
+        .achievement-card:hover .achievement-image img {
+            transform: scale(1.08);
+        }
+
+        .achievement-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 107, 53, 0.15) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .achievement-card:hover .achievement-overlay {
+            opacity: 1;
+        }
+
+        .achievement-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            z-index: 10;
+            animation: slideInDown 0.6s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .achievement-content {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .achievement-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, white 0%, var(--accent-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .achievement-description {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .achievement-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .stat {
+            flex: 1;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .achievement-cta {
+            display: inline-block;
+            padding: 0.8rem 1.6rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .achievement-cta:hover {
+            background: #ff5520;
+            transform: translateX(4px);
+            box-shadow: 0 8px 16px rgba(255, 107, 53, 0.3);
+        }
+
         /* Contact Info Section */
         .contact-info {
             display: grid;
@@ -669,6 +935,11 @@
             border-color: #fff;
         }
 
+        .social-btn.youtube:hover {
+            background: #ff0000;
+            border-color: #fff;
+        }
+
         .social-btn svg {
             width: 24px;
             height: 24px;
@@ -797,6 +1068,52 @@
                 font-size: 0.9rem;
             }
 
+            .achievements {
+                padding: 3rem 1rem;
+            }
+
+            .achievements-title h2 {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .achievement-card {
+                border-radius: 8px;
+            }
+
+            .achievement-image {
+                height: 280px;
+            }
+
+            .achievement-content {
+                padding: 1.5rem;
+            }
+
+            .achievement-title {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .achievement-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .achievement-stats {
+                gap: 1rem;
+                margin-bottom: 1.2rem;
+                padding-bottom: 1.2rem;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+
             .lead-capture {
                 padding: 2rem 1rem;
                 margin: 1.5rem 0;
@@ -916,26 +1233,6 @@
                 width: 20px;
                 height: 20px;
             }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                padding: 1.5rem 0;
-            }
-
-            .contact-icon {
-                font-size: 2rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .contact-item h3 {
-                font-size: 1rem;
-                margin-bottom: 0.6rem;
-            }
-
-            .contact-item p {
-                font-size: 0.95rem;
-            }
         }
 
         @media (max-width: 480px) {
@@ -977,6 +1274,31 @@
 
             .feature-card p {
                 font-size: 0.85rem;
+            }
+
+            .achievements-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .achievement-image {
+                height: 240px;
+            }
+
+            .achievement-title {
+                font-size: 1.2rem;
+            }
+
+            .achievement-stats {
+                gap: 0.8rem;
+                padding-bottom: 1rem;
+            }
+
+            .stat-value {
+                font-size: 1.4rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
             }
 
             .pricing-card {
@@ -1040,6 +1362,7 @@
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#features">Features</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><button class="cta-btn" onclick="scrollToCapture()">Get Started</button></li>
@@ -1086,6 +1409,170 @@
                 <div class="feature-icon">⏰</div>
                 <h3>FLEXIBLE HOURS</h3>
                 <p>Morning 5:30am - 1:30 pm / Evening 4pm - 9:30pm. Train on your schedule with facility access for all members</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="achievements" id="achievements">
+        <div class="achievements-content">
+            <div class="achievements-title">
+                <h2>🏆 Success Stories & Achievements</h2>
+                <p>Real transformations from our dedicated members</p>
+            </div>
+
+            <!-- Achievements Carousel -->
+            <div class="achievements-carousel-container">
+                <div class="achievements-carousel-wrapper">
+                    <div class="achievements-carousel" id="achievementsCarousel">
+                        <!-- Slide 1 -->
+                        <div class="achievement-card carousel-slide">
+                            <div class="achievement-image">
+                                <img src="photo2.jpeg" alt="79 KG to 65 KG">
+                                <div class="achievement-overlay"></div>
+                                <div class="achievement-badge">Featured</div>
+                            </div>
+                            <div class="achievement-content">
+                                <h3 class="achievement-title">79 KG → 65 KG</h3>
+                                <p class="achievement-description">Incredible transformation showing dedication and commitment to fitness goals. This client achieved remarkable results through consistent training.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">14 KG</span>
+                                        <span class="stat-label">Lost</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">12</span>
+                                        <span class="stat-label">Weeks</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">100%</span>
+                                        <span class="stat-label">Success</span>
+                                    </div>
+                                </div>
+                                <button class="achievement-cta" onclick="scrollToCapture()">Start Your Journey</button>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="achievement-card carousel-slide">
+                            <div class="achievement-image">
+                                <img src="photo1.jpeg" alt="97 KG to 87 KG">
+                                <div class="achievement-overlay"></div>
+                                <div class="achievement-badge">Featured</div>
+                            </div>
+                            <div class="achievement-content">
+                                <h3 class="achievement-title">97 KG → 87 KG</h3>
+                                <p class="achievement-description">Outstanding progress with visible muscle definition and strength gains. This transformation demonstrates the power of consistent training.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">10 KG</span>
+                                        <span class="stat-label">Lost</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">16</span>
+                                        <span class="stat-label">Weeks</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">+5 KG</span>
+                                        <span class="stat-label">Muscle</span>
+                                    </div>
+                                </div>
+                                <button class="achievement-cta" onclick="scrollToCapture()">Start Your Journey</button>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="achievement-card carousel-slide">
+                            <div class="achievement-image">
+                                <img src="photo3.jpeg" alt="92 KG to 83 KG">
+                                <div class="achievement-overlay"></div>
+                                <div class="achievement-badge">Featured</div>
+                            </div>
+                            <div class="achievement-content">
+                                <h3 class="achievement-title">92 KG → 83 KG</h3>
+                                <p class="achievement-description">Remarkable body composition change with noticeable muscle development. This client's transformation is truly inspiring and motivating.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">9 KG</span>
+                                        <span class="stat-label">Lost</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">14</span>
+                                        <span class="stat-label">Weeks</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">100%</span>
+                                        <span class="stat-label">Satisfied</span>
+                                    </div>
+                                </div>
+                                <button class="achievement-cta" onclick="scrollToCapture()">Start Your Journey</button>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="achievement-card carousel-slide">
+                            <div class="achievement-image">
+                                <img src="photo4.jpeg" alt="94 KG to 71 KG">
+                                <div class="achievement-overlay"></div>
+                                <div class="achievement-badge">Featured</div>
+                            </div>
+                            <div class="achievement-content">
+                                <h3 class="achievement-title">94 KG → 71 KG</h3>
+                                <p class="achievement-description">Exceptional transformation showing the most dramatic change. This client's commitment resulted in an incredible body transformation.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">23 KG</span>
+                                        <span class="stat-label">Lost</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">20</span>
+                                        <span class="stat-label">Weeks</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">95%</span>
+                                        <span class="stat-label">Fat Loss</span>
+                                    </div>
+                                </div>
+                                <button class="achievement-cta" onclick="scrollToCapture()">Start Your Journey</button>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="achievement-card carousel-slide">
+                            <div class="achievement-image">
+                                <img src="photo5.jpeg" alt="70 KG to 57.5 KG">
+                                <div class="achievement-overlay"></div>
+                                <div class="achievement-badge">Featured</div>
+                            </div>
+                            <div class="achievement-content">
+                                <h3 class="achievement-title">70 KG → 57.5 KG</h3>
+                                <p class="achievement-description">Successful lean body transformation at ENERGY FITNESS STUDIO. This client's consistent dedication created this outstanding result.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">12.5 KG</span>
+                                        <span class="stat-label">Lost</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">18</span>
+                                        <span class="stat-label">Weeks</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">+150%</span>
+                                        <span class="stat-label">Energy</span>
+                                    </div>
+                                </div>
+                                <button class="achievement-cta" onclick="scrollToCapture()">Start Your Journey</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="prevAchievementSlide()">← Previous</button>
+                    <span class="carousel-counter"><span id="achievement-current-slide">1</span> / 5</span>
+                    <button class="carousel-btn" onclick="nextAchievementSlide()">Next →</button>
+                </div>
             </div>
         </div>
     </section>
@@ -1169,7 +1656,7 @@
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3>MONTHLY</h3>
-                <div class="price">₹1499<span class="price-period">/ month</span></div>
+                <div class="price">₹1499<span class="price-period">/month</span></div>
                 <ul class="features-list">
                     <li>Gym Access</li>
                     <li>Personal Training</li>
@@ -1180,7 +1667,7 @@
             </div>
             <div class="pricing-card featured">
                 <h3>QUARTERLY</h3>
-                <div class="price">₹3499<span class="price-period"> / 3-Months</span></div>
+                <div class="price">₹3499<span class="price-period">/(3-Months)</span></div>
                 <ul class="features-list">
                     <li>Personal Training Sessions</li>
                     <li>Nutrition Coaching</li>
@@ -1191,7 +1678,7 @@
             </div>
             <div class="pricing-card">
                 <h3>HALF YEARLY</h3>
-                <div class="price">₹5499<span class="price-period"> / 6-months </span></div>
+                <div class="price">₹5499<span class="price-period">(/6-months)</span></div>
                 <ul class="features-list">
                     <li>Unlimited Personal Training</li>
                     <li>Custom Meal Plans</li>
@@ -1220,6 +1707,11 @@
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
             </a>
+            <a href="https://youtube.com/@energyfitnessstudiosaravan2483?si=Z_oiVkxOdoptH9VU" target="_blank" rel="noopener noreferrer" class="social-btn youtube" title="Subscribe to our YouTube Channel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+            </a>
         </div>
     </footer>
 
@@ -1229,6 +1721,32 @@
         const errorMessage = document.getElementById('errorMessage');
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
+
+        // Achievement Carousel Variables
+        let currentAchievementSlide = 0;
+        const totalAchievementSlides = 5;
+
+        function showAchievementSlide(n) {
+            const carousel = document.getElementById('achievementsCarousel');
+            if (n >= totalAchievementSlides) currentAchievementSlide = 0;
+            if (n < 0) currentAchievementSlide = totalAchievementSlides - 1;
+            
+            carousel.style.transform = `translateX(-${currentAchievementSlide * 100}%)`;
+            document.getElementById('achievement-current-slide').textContent = currentAchievementSlide + 1;
+        }
+
+        function nextAchievementSlide() {
+            currentAchievementSlide++;
+            showAchievementSlide(currentAchievementSlide);
+        }
+
+        function prevAchievementSlide() {
+            currentAchievementSlide--;
+            showAchievementSlide(currentAchievementSlide);
+        }
+
+        // Auto-advance achievement slides every 10 seconds
+        setInterval(nextAchievementSlide, 10000);
 
         // Mobile Menu Toggle
         menuToggle.addEventListener('click', function() {
@@ -1295,11 +1813,6 @@
 
             // Log to console
             console.log('Lead captured:', leadData);
-
-            // Store in localStorage
-            const existingLeads = JSON.parse(localStorage.getItem('gymLeads') || '[]');
-            existingLeads.push(leadData);
-            localStorage.setItem('gymLeads', JSON.stringify(existingLeads));
 
             // Reset form
             form.reset();
